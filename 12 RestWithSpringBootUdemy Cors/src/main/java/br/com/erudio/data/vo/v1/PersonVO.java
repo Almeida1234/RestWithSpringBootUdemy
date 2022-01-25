@@ -8,17 +8,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 
-@JsonPropertyOrder({"id", "first_Name", "last_Name", "gender", "address"})
+@JsonPropertyOrder({ "id", "firstName", "lastName", "address", "gender" })
 public class PersonVO extends ResourceSupport implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Mapping("id")
 	@JsonProperty("id")
 	private Long key;
-	@JsonProperty("first_Name")
 	private String firstName;
-	@JsonProperty("last_Name")
 	private String lastName;
 	private String address;
 	private String gender;
@@ -114,5 +112,4 @@ public class PersonVO extends ResourceSupport implements Serializable{
 			return false;
 		return true;
 	}
-
 }

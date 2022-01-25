@@ -31,9 +31,8 @@ public class WebConfig implements WebMvcConfigurer{
 		// Via EXTENSION. localhost:8080/person.x-yaml
 		/*
 		 * configurer.favorParameter(false) .ignoreAcceptHeader(false)
-		 * .defaultContentType(MediaType.APPLICATION_JSON) 
-		 * .mediaType("json", MediaType.APPLICATION_JSON) 
-		 * .mediaType("xml", MediaType.APPLICATION_XML);
+		 * .defaultContentType(MediaType.APPLICATION_JSON) .mediaType("json",
+		 * MediaType.APPLICATION_JSON) .mediaType("xml", MediaType.APPLICATION_XML);
 		 */
 		
 		// Via QUERY PARAM. localhost:8080/person?mediaType=xml 
@@ -41,9 +40,8 @@ public class WebConfig implements WebMvcConfigurer{
 		 * configurer.favorPathExtension(false) .favorParameter(true)
 		 * .parameterName("mediaType") .ignoreAcceptHeader(true)
 		 * .useRegisteredExtensionsOnly(false)
-		 * .defaultContentType(MediaType.APPLICATION_JSON) 
-		 * .mediaType("json", MediaType.APPLICATION_JSON) 
-		 * .mediaType("xml", MediaType.APPLICATION_XML);
+		 * .defaultContentType(MediaType.APPLICATION_JSON) .mediaType("json",
+		 * MediaType.APPLICATION_JSON) .mediaType("xml", MediaType.APPLICATION_XML);
 		 */
 		
 		configurer.favorPathExtension(false)

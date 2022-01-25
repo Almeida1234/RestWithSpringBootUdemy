@@ -32,7 +32,7 @@ public class PersonController {
 	@Autowired
 	private PersonServices service;
 	
-	@ApiOperation(value = "Encontre todas as pessoas" ) 
+	@ApiOperation(value = "Find all people" ) 
 	@GetMapping(produces = { "application/json", "application/xml", "application/x-yaml" })
 	public List<PersonVO> findAll() {
 		List<PersonVO> persons =  service.findAll();
@@ -45,8 +45,8 @@ public class PersonController {
 		return persons;
 	}	
 	
-	//@CrossOrigin(origins= "http://localhost:8080")
-	@ApiOperation(value = "Encontre uma pessoa específica pelo seu ID" )
+	// @CrossOrigin(origins= "http://localhost:8080")
+	@ApiOperation(value = "Find a specific person by your ID" )
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO findById(@PathVariable("id") Long id) {
 		PersonVO personVO = service.findById(id);
@@ -54,8 +54,8 @@ public class PersonController {
 		return personVO;
 	}	
 	
-	//@CrossOrigin(origins= {"http://localhost:8080", "http://www.erudio.com.br"})
-	@ApiOperation(value = "Crie uma nova pessoa") 
+	// @CrossOrigin(origins= {"http://localhost:8080", "http://www.erudio.com.br"})
+	@ApiOperation(value = "Create a new person") 
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO create(@RequestBody PersonVO person) {
@@ -64,7 +64,7 @@ public class PersonController {
 		return personVO;
 	}
 	
-	@ApiOperation(value = "Atualizar uma pessoa específica")
+	@ApiOperation(value = "Update a specific person")
 	@PutMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO update(@RequestBody PersonVO person) {
@@ -73,7 +73,7 @@ public class PersonController {
 		return personVO;
 	}	
 	
-	@ApiOperation(value = "Exclua uma pessoa específica por seu ID")
+	@ApiOperation(value = "Delete a specific person by your ID")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		service.delete(id);

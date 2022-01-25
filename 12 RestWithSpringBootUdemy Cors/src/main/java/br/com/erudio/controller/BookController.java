@@ -29,7 +29,7 @@ public class BookController {
 	@Autowired
 	private BookServices service;
 	
-	@ApiOperation(value = "Encontre todos os livros" )
+	@ApiOperation(value = "Find all books" )
 	@GetMapping(produces = { "application/json", "application/xml", "application/x-yaml" })
 	public List<BookVO> findAll() {
 		List<BookVO> books =  service.findAll();
@@ -42,7 +42,7 @@ public class BookController {
 		return books;
 	}	
 	
-	@ApiOperation(value = "Encontre um livro específico pelo seu ID" )
+	@ApiOperation(value = "Find a specific book by your ID" )
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public BookVO findById(@PathVariable("id") Long id) {
 		BookVO bookVO = service.findById(id);
@@ -50,7 +50,7 @@ public class BookController {
 		return bookVO;
 	}	
 	
-	@ApiOperation(value = "Crie um novo livro")
+	@ApiOperation(value = "Create a new book")
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public BookVO create(@RequestBody BookVO book) {
@@ -59,7 +59,7 @@ public class BookController {
 		return bookVO;
 	}
 	
-	@ApiOperation(value = "Atualizar um livro específico")
+	@ApiOperation(value = "Update a specific book")
 	@PutMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public BookVO update(@RequestBody BookVO book) {
@@ -68,7 +68,7 @@ public class BookController {
 		return bookVO;
 	}	
 	
-	@ApiOperation(value = "Exclua um livro específico com o seu ID")
+	@ApiOperation(value = "Delete a specific book by your ID")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		service.delete(id);
