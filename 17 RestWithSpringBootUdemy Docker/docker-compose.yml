@@ -21,7 +21,7 @@ services:
     image: ricknovaes/rest-with-spring-boot-udemy
     restart: always
     build:
-      context: /RestWithSpringBootUdemy
+      context: ./RestWithSpringBootUdemy
       dockerfile: Dockerfile 
     working_dir: /RestWithSpringBootUdemy
     environment:
