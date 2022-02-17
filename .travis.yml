@@ -1,11 +1,7 @@
 language: bash
 services: docker
 before_install:
-<<<<<<< HEAD
   - cd 17\ RestWithSpringBootUdemy\ Docker/
-=======
-  - cd 17\ RestWithSpringBootUdemy\ Trabalhando com Docker/
->>>>>>> 8431b29f545d0b59e404997958741567524c67b3
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
